@@ -1,0 +1,17 @@
+{
+  "name": "Calculadora Nómina CGT",
+  "short_name": "Nómina CGT",
+  "description": "Calculadora de nómina offline para afiliados de CGT",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#111827",
+  "theme_color": "#dc2626",
+  "icons": [
+    {
+      "src": "icono.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
