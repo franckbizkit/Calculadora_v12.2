@@ -1,16 +1,23 @@
 {
   "name": "Calculadora Nómina CGT",
   "short_name": "Nómina CGT",
-  "description": "Calculadora de nómina offline para afiliados de CGT",
-  "start_url": "index.html",
+  "description": "Calculadora de nómina para empleados, optimizada para 2026.",
+  "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#111827",
-  "theme_color": "#dc2626",
+  "background_color": "#f3f4f6",
+  "theme_color": "#111827",
+  "orientation": "portrait",
   "icons": [
     {
-      "src": "icono.png",
-      "sizes": "512x512",
+      "src": "https://cdn-icons-png.flaticon.com/512/2654/2654416.png",
       "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/2654/2654416.png",
+      "type": "image/png",
+      "sizes": "512x512",
       "purpose": "any maskable"
     }
   ]

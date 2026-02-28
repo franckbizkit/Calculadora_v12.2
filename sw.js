@@ -1,46 +1,46 @@
-// Nombre del caché y versión (Cámbialo si haces actualizaciones grandes)
-const CACHE_NAME = 'cgt-nomina-v1';
-
-// Lista de archivos que la App guardará para funcionar sin internet
-const ASSETS_TO_CACHE = [
-  'index.html',
-  'manifest.json',
-  'sw.js',
-  'icono.png'
+const CACHE_NAME = 'cgt-nomina-v3';
+const urlsToCache = [
+  './',
+  './index.html',
+  './manifest.json',
+  'https://cdn-icons-png.flaticon.com/512/2654/2654416.png'
 ];
 
-// Evento de Instalación: Se ejecuta la primera vez que el usuario abre la web
-self.addEventListener('install', (event) => {
+// Instalar el Service Worker y guardar los archivos iniciales en caché
+self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      // Guardamos todos los archivos en el caché del navegador
-      return cache.addAll(ASSETS_TO_CACHE);
-    })
+    caches.open(CACHE_NAME)
+      .then(cache => {
+        console.log('Archivos cacheados exitosamente');
+        return cache.addAll(urlsToCache);
+      })
   );
 });
 
-// Evento de Activación: Limpia versiones antiguas del caché si existen
-self.addEventListener('activate', (event) => {
+// Interceptar las peticiones de red para que funcione sin conexión
+self.addEventListener('fetch', event => {
+  event.respondWith(
+    caches.match(event.request)
+      .then(response => {
+        // Devuelve el archivo de la caché si existe, o haz la petición a la red
+        return response || fetch(event.request);
+      })
+  );
+});
+
+// Limpiar memorias caché antiguas cuando se actualiza la versión del Service Worker
+self.addEventListener('activate', event => {
+  const cacheWhitelist = [CACHE_NAME];
   event.waitUntil(
-    caches.keys().then((cacheNames) => {
+    caches.keys().then(cacheNames => {
       return Promise.all(
-        cacheNames.map((cacheName) => {
-          if (cacheName !== CACHE_NAME) {
+        cacheNames.map(cacheName => {
+          if (cacheWhitelist.indexOf(cacheName) === -1) {
+            console.log('Borrando caché antigua:', cacheName);
             return caches.delete(cacheName);
           }
         })
       );
-    })
-  );
-});
-
-// Evento Fetch: Intercepta las peticiones para servir los archivos desde el caché
-// Esto es lo que permite que la App cargue instantáneamente y funcione OFFLINE
-self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request).then((response) => {
-      // Si el archivo está en el caché, lo devuelve; si no, intenta ir a internet
-      return response || fetch(event.request);
     })
   );
 });
