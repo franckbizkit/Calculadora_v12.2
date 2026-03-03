@@ -18,7 +18,7 @@ Este repositorio está protegido mediante:
 
 ## 🛠️ Instalación
 Para probar este proyecto en tu computadora local:
-1. Clona el repositorio: `git clone https://franckbizkit.github.io/Calculadora_v12.2`
+1. Clona el repositorio: https://franckbizkit.github.io/Calculadora_v12.2
 2. Ejecuta el archivo principal.
 
 ---
