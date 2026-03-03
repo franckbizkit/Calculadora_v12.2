@@ -13,6 +13,10 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Nómina CGT">
+    
+    <!-- Hash de Integridad / Versión -->
+    <meta name="application-hash" content="7b7dc73dcbf24a28138f425b9065d52711f9d27b25f669f554e612da5e9ff726">
+
     <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/2654/2654416.png">
 
     <title>Calculadora Nómina | CGT</title>
@@ -472,6 +476,9 @@
 <script>
     "use strict";
 
+    // Hash de la aplicación
+    window.APP_HASH = "7b7dc73dcbf24a28138f425b9065d52711f9d27b25f669f554e612da5e9ff726";
+
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => { navigator.serviceWorker.register('sw.js').catch(() => {}); });
     }
@@ -576,7 +583,7 @@
     };
 
     // SHA-256 Descarga
-    window.EXPECTED_APK_HASH = "e2fc86dad61df4d75fd215294a9e997311ce56c5017b54f0c4733fbef51daac8";
+    window.EXPECTED_APK_HASH = "7b7dc73dcbf24a28138f425b9065d52711f9d27b25f669f554e612da5e9ff726";
     
     window.descargarAppSegura = async function(event) {
         event.preventDefault();
