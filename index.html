@@ -149,7 +149,7 @@
         /* NUEVO: ESTILOS PARA IMPRESIÓN Y EXPORTACIÓN A PDF */
         @media print {
             body { background-color: #ffffff !important; color: #000000 !important; margin: 0 !important; padding: 0 !important; }
-            header, #config-panel, .app-card, #btn-calcular-main, #btn-descarga-segura, #caja-integridad, #btn-borrar, #btn-imprimir, .text-center.mt-10 { 
+            header, #config-panel, .app-card, #btn-calcular-main, #btn-descarga-segura, #caja-integridad, #btn-borrar, #btn-imprimir, .text-center.mt-10, #aviso-actualizacion { 
                 display: none !important; 
             }
             main { max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
@@ -180,6 +180,14 @@
 
 <main class="max-w-md mx-auto px-4 mt-6">
     
+    <!-- Nota Informativa Caché PWA -->
+    <div id="aviso-actualizacion" style="background: #1e293b; border-radius: 16px; border: 1px solid #334155; border-left: 5px solid #dc2626; padding: 0.85rem 1rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem; box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.1);">
+        <svg class="text-red-500 flex-shrink-0" style="width: 2.5rem; height: 2.5rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+        <p class="text-xs font-bold text-white uppercase leading-tight" style="margin: 0;">
+            PARA QUE FUTURAS ACTUALIZACIONES DE LA APP TENGAN EFECTO HAY QUE BORRAR LA CACHÉ DEL NAVEGADOR
+        </p>
+    </div>
+
     <!-- Configuración Desplegable -->
     <details class="app-card !bg-slate-50 border border-slate-200 !py-4" id="config-panel">
         <summary class="font-bold text-xs tracking-wider uppercase cursor-pointer text-slate-500 hover:text-red-600 transition-colors outline-none flex justify-between items-center">
