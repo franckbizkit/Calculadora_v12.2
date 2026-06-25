@@ -15,7 +15,7 @@
     <meta name="apple-mobile-web-app-title" content="Nómina CGT">
     
     <!-- Hash de Integridad / Versión -->
-    <meta name="application-hash" content="ea7e3ad9d1a5d2b9a87cf14712c4602fc90bc553c39de09db9a602263af2ccdd">
+    <meta name="application-hash" content="2a1624c3a1e520f129eb470494aeb910754e22686d5ebb710bcfd3e3e0438c64">
 
     <!-- Icono integrado en base64/SVG -->
     <link rel="apple-touch-icon" href="data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100' height='100' rx='24' fill='white'/%3E%3Cpath d='M0 0 L100 100 L100 0 Z' fill='%23cc0000'/%3E%3Cpath d='M0 100 L100 100 L0 0 Z' fill='%23000000'/%3E%3Ctext x='50' y='66' font-family='Arial Black' font-weight='900' font-size='26' fill='white' text-anchor='middle'%3ECGT%3C/text%3E%3C/svg%3E">
@@ -591,11 +591,11 @@
         if (e.keyCode === 123 || (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) || (e.ctrlKey && e.keyCode === 85)) e.preventDefault();
     });
     setInterval(function() { debugger; }, 2000);
-    window.APP_HASH = "ea7e3ad9d1a5d2b9a87cf14712c4602fc90bc553c39de09db9a602263af2ccdd";
+    window.APP_HASH = "2a1624c3a1e520f129eb470494aeb910754e22686d5ebb710bcfd3e3e0438c64";
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => { navigator.serviceWorker.register('sw.js').catch(() => {}); });
     }
-    window.EXPECTED_APK_HASH = "ea7e3ad9d1a5d2b9a87cf14712c4602fc90bc553c39de09db9a602263af2ccdd";
+    window.EXPECTED_APK_HASH = "2a1624c3a1e520f129eb470494aeb910754e22686d5ebb710bcfd3e3e0438c64";
 
     // VARIABLES GLOBALES
     let _cA = "B3";
